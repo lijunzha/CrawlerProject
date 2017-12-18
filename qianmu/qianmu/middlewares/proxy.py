@@ -44,4 +44,3 @@ class RandomProxyMiddleware(object):
             logger.warning('proxy %s remove from proxies list' % cur_proxy)
         return response
 
-

@@ -24,7 +24,7 @@ ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 # 并发请求的数量
-CONCURRENT_REQUESTS = 4
+CONCURRENT_REQUESTS = 1
 # 使用代理
 HTTPPROXY_ENABLED = True
 PROXIES = ['http://pc1120:pc1120@123.249.34.10:888', 'http://pc1120:pc1120@1.82.230.113:888']
@@ -32,7 +32,7 @@ PROXIES = ['http://pc1120:pc1120@123.249.34.10:888', 'http://pc1120:pc1120@1.82.
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 # 请求延迟的时间(秒)，如果为0，则没有延迟
-DOWNLOAD_DELAY = 0
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -68,16 +68,17 @@ DEFAULT_REQUEST_HEADERS = {
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    'qianmu.middlewares.useragent.RandomUserAgentMiddleware': 500,
-    'qianmu.middlewares.proxy.RandonProxyMiddleware': 749,
+    'qianmu.middlewares.proxy.RandomProxyMiddleware': 749,
 
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware':None,
 }
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
+# EXTENSIONS = {
 #    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+#     'scrapy.extensions.corestats.CoreStats':500,
+# }
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
